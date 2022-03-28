@@ -10,11 +10,11 @@ export default function Movie(props) {
   useEffect(() => {
     axios
       .get(`http://localhost:5001/api/movies/${id}`) // Study this endpoint with Postman
-      .then(response => {
+      .then((response) => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
     // This effect should run every time time
@@ -31,24 +31,24 @@ export default function Movie(props) {
   const { title, director, metascore, stars } = movie;
 
   return (
-    <div className="save-wrapper">
-      <div className="movie-card">
+    <div className='save-wrapper'>
+      <div className='movie-card'>
         <h2>{title}</h2>
-        <div className="movie-director">
+        <div className='movie-director'>
           Director: <em>{director}</em>
         </div>
-        <div className="movie-metascore">
+        <div className='movie-metascore'>
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
-          <div key={star} className="movie-star">
+        {stars.map((star) => (
+          <div key={star} className='movie-star'>
             {star}
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className='save-button'>Save</div>
     </div>
   );
 }
