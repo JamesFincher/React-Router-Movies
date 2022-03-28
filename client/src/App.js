@@ -43,10 +43,9 @@ export default function App() {
       <Route exact path='/'>
         <MovieList movies={movieList} />
       </Route>
-      <Route path={`/movies/:id`}>
+      <Route path='/movie/:id'>
         <Movie />
       </Route>
-      ;{' '}
     </div>
   );
 }
